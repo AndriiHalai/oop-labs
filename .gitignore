@@ -6,6 +6,7 @@ out/artifacts/lab3_jar/lab3.jar
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
+.idea/vcs.xml
 .idea/workspace.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
