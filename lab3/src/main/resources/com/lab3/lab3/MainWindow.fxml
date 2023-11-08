@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lab3.lab3.MainWindowController">
+   <children>
+      <MenuBar fx:id="menuBar" VBox.vgrow="ALWAYS">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл" />
+          <Menu fx:id="objectsMenu" mnemonicParsing="false" text="Об'єкти">
+            <items>
+                  <RadioMenuItem fx:id="pointOption" mnemonicParsing="false" onAction="#drawPoint" text="Крапка">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="objects" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="lineOption" mnemonicParsing="false" onAction="#drawLine" text="Лінія" toggleGroup="$objects" />
+                  <RadioMenuItem fx:id="rectOption" mnemonicParsing="false" onAction="#drawRectangle" text="Прямокутник" toggleGroup="$objects" />
+                  <RadioMenuItem fx:id="ellipseOption" mnemonicParsing="false" onAction="#drawEllipse" text="Еліпс" toggleGroup="$objects" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Довідка" />
+        </menus>
+      </MenuBar>
+      <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <ToggleButton fx:id="pointTool" mnemonicParsing="false" onAction="#drawPoint">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-10-27_16-41-54.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tools" />
+               </toggleGroup>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Крапка" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="lineTool" mnemonicParsing="false" onAction="#drawLine" toggleGroup="$tools">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-10-27_16-45-49.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Лінія" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="rectTool" mnemonicParsing="false" onAction="#drawRectangle" toggleGroup="$tools">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-11-01_23-13-30.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Прямокутник" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="ellipseTool" mnemonicParsing="false" onAction="#drawEllipse" toggleGroup="$tools">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-10-27_18-22-24.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Еліпс" />
+               </tooltip>
+            </ToggleButton>
+        </items>
+      </ToolBar>
+      <Canvas id="canvas" fx:id="canvas" height="349.0" width="600.0" />
+   </children>
+</VBox>
