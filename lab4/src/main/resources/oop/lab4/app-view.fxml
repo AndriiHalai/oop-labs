@@ -22,7 +22,7 @@
     </MenuBar>
     <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="200.0">
       <items>
-        <ToggleButton fx:id="pointTool" mnemonicParsing="false">
+        <ToggleButton fx:id="pointTool" mnemonicParsing="false" onAction="#drawPoint">
           <graphic>
             <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -40,7 +40,7 @@
             <Tooltip text="Крапка" />
           </tooltip>
         </ToggleButton>
-        <ToggleButton fx:id="lineTool" mnemonicParsing="false" toggleGroup="$tools">
+        <ToggleButton fx:id="lineTool" mnemonicParsing="false" onAction="#drawLine" toggleGroup="$tools">
           <graphic>
             <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -55,7 +55,7 @@
             <Tooltip text="Лінія" />
           </tooltip>
         </ToggleButton>
-        <ToggleButton fx:id="rectTool" mnemonicParsing="false" toggleGroup="$tools">
+        <ToggleButton fx:id="rectTool" mnemonicParsing="false" onAction="#drawRect" toggleGroup="$tools">
           <graphic>
             <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -70,7 +70,7 @@
             <Tooltip text="Прямокутник" />
           </tooltip>
         </ToggleButton>
-        <ToggleButton fx:id="ellipseTool" mnemonicParsing="false" toggleGroup="$tools">
+        <ToggleButton fx:id="ellipseTool" mnemonicParsing="false" onAction="#drawEllipse" toggleGroup="$tools">
           <graphic>
             <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
               <image>
