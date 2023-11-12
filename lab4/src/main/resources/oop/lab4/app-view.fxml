@@ -85,6 +85,16 @@
             <Tooltip text="Еліпс" />
           </tooltip>
         </ToggleButton>
+            <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="59.0" text="OLineO">
+               <tooltip>
+                  <Tooltip text="Empty Tooltip" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" text="Cube">
+               <tooltip>
+                  <Tooltip text="Empty Tooltip" />
+               </tooltip>
+            </ToggleButton>
       </items>
     </ToolBar>
     <Canvas id="canvas" fx:id="canvas" height="349.0" width="600.0" />
