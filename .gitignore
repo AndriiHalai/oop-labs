@@ -11,6 +11,7 @@ out/artifacts/lab3_jar/lab3.jar
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+lab4/.idea/codeStyles/
 *.iws
 *.iml
 *.ipr

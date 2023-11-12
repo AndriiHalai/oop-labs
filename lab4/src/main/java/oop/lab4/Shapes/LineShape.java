@@ -11,7 +11,7 @@ public class LineShape extends Shape{
     private double x2;
     private double y2;
 
-    private void setCoords(double x1, double x2, double y1, double y2) {
+    public void setCoords(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
         this.x2 = x2;
         this.y1 = y1;
@@ -55,7 +55,7 @@ public class LineShape extends Shape{
             this.x2 = mouseEvent.getX();
             this.y2 = mouseEvent.getY();
             LineShape line= new LineShape();
-            line.setCoords(this.x1, this.x2, this.y1, this.y2);
+            line.setCoords(this.x1, this.y1, this.x2, this.y2);
             line.show(canvas);
             Editor.addShape(line);
         });

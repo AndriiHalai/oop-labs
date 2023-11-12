@@ -73,7 +73,7 @@ public class EllipseShape extends Shape {
         });
     }
 
-    private void setCoords(double x1, double y1, double width, double height) {
+    public void setCoords(double x1, double y1, double width, double height) {
         this.x1 = x1;
         this.y1 = y1;
         this.width = width;

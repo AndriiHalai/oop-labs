@@ -3,10 +3,7 @@ package oop.lab4;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
-import oop.lab4.Shapes.EllipseShape;
-import oop.lab4.Shapes.LineShape;
-import oop.lab4.Shapes.PointShape;
-import oop.lab4.Shapes.RectShape;
+import oop.lab4.Shapes.*;
 
 public class AppController {
     @FXML
@@ -38,5 +35,9 @@ public class AppController {
 
     public void drawEllipse() {
         Editor.draw(new EllipseShape(), canvas);
+    }
+
+    public void drawOLineO() {
+        Editor.draw(new OLineO(), canvas);
     }
 }

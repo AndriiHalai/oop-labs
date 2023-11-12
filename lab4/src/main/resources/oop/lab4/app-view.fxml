@@ -85,7 +85,7 @@
             <Tooltip text="Еліпс" />
           </tooltip>
         </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="59.0" text="OLineO">
+            <ToggleButton mnemonicParsing="false" onAction="#drawOLineO" prefHeight="38.0" prefWidth="59.0" text="OLineO">
                <tooltip>
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
