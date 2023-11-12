@@ -1,6 +1,7 @@
 package oop.lab4.Shapes;
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import oop.lab4.Editor;
 
 public class OLineO extends Shape {
@@ -37,7 +38,10 @@ public class OLineO extends Shape {
             Editor.redrawCanvas(canvas);
             this.x2 = mouseEvent.getX();
             this.y2 = mouseEvent.getY();
+            GraphicsContext gc = canvas.getGraphicsContext2D();
+            gc.setLineDashes(5);
             drawShapes(canvas);
+            gc.setLineDashes(0);
         });
     }
 

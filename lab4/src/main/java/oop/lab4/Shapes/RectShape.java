@@ -63,6 +63,7 @@ public class RectShape extends Shape{
             this.y = topLeftY;
             gc.setLineDashes(5);
             gc.strokeRect(this.x, this.y, this.width, this.height);
+            gc.setLineDashes(0);
         });
     }
 

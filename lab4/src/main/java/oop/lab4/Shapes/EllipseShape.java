@@ -12,7 +12,6 @@ public class EllipseShape extends Shape {
     public void show(Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.PINK);
-        gc.setLineDashes(0);
         gc.fillOval(this.x1, this.y1, this.width, this.height);
         gc.strokeOval(this.x1, this.y1, this.width, this.height);
     }
@@ -58,6 +57,7 @@ public class EllipseShape extends Shape {
             }
             gc.setLineDashes(5);
             gc.strokeOval(this.x1, this.y1, this.width, this.height);
+            gc.setLineDashes(0);
         });
     }
 

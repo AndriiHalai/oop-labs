@@ -21,7 +21,6 @@ public class LineShape extends Shape{
     public void show(Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.BLACK);
-        gc.setLineDashes(0);
         gc.strokeLine(this.x1, this.y1, this.x2, this.y2);
     }
 
@@ -44,6 +43,7 @@ public class LineShape extends Shape{
             gc.setFill(Color.BLACK);
             gc.setLineDashes(5);
             gc.strokeLine(this.x1, this.y1, this.x2, this.y2);
+            gc.setLineDashes(0);
         });
     }
 
