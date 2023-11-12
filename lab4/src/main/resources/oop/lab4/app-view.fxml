@@ -85,12 +85,19 @@
             <Tooltip text="Еліпс" />
           </tooltip>
         </ToggleButton>
-            <ToggleButton mnemonicParsing="false" onAction="#drawOLineO" prefHeight="38.0" prefWidth="59.0" text="OLineO">
+            <ToggleButton mnemonicParsing="false" onAction="#drawOLineO" prefHeight="38.0" prefWidth="59.0" toggleGroup="$tools">
                <tooltip>
-                  <Tooltip text="Empty Tooltip" />
+                  <Tooltip text="Лінія з кружечками на кінцях" />
                </tooltip>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-11-12_23-01-27.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" text="Cube">
+            <ToggleButton mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" text="Cube" toggleGroup="$tools">
                <tooltip>
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
