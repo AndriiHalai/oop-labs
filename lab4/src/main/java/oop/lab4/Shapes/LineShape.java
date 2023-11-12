@@ -42,6 +42,7 @@ public class LineShape extends Shape{
             this.y2 = mouseEvent.getY();
             GraphicsContext gc = canvas.getGraphicsContext2D();
             gc.setFill(Color.BLACK);
+            gc.setLineDashes(5);
             gc.strokeLine(this.x1, this.y1, this.x2, this.y2);
         });
     }

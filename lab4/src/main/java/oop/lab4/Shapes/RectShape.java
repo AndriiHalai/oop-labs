@@ -18,6 +18,7 @@ public class RectShape extends Shape{
     public void show(Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.ORANGE);
+        gc.setLineDashes(0);
         gc.fillRect(this.x, this.y, width , height);
         gc.strokeRect(this.x, this.y, width, height);
     }
@@ -60,6 +61,7 @@ public class RectShape extends Shape{
 
             this.x = topLeftX;
             this.y = topLeftY;
+            gc.setLineDashes(5);
             gc.strokeRect(this.x, this.y, this.width, this.height);
         });
     }
