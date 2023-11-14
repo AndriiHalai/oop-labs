@@ -91,8 +91,8 @@ public class Cube extends Shape {
         canvas.setOnMouseReleased(mouseEvent -> {
             Editor.clearCanvas(canvas);
             Editor.redrawCanvas(canvas);
-//            this.x4 = mouseEvent.getX();
-//            this.y4 = mouseEvent.getY();
+            this.x4 = mouseEvent.getX();
+            this.y4 = mouseEvent.getY();
             Cube cube = new Cube();
             cube.setCoords(x1, y1, x4, y4);
             cube.show(canvas);
