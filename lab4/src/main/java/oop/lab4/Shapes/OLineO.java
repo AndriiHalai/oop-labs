@@ -50,8 +50,10 @@ public class OLineO extends Shape {
         canvas.setOnMouseReleased(mouseEvent -> {
             Editor.clearCanvas(canvas);
             Editor.redrawCanvas(canvas);
+            this.x2 = mouseEvent.getX();
+            this.y2 = mouseEvent.getY();
             OLineO oLineo = new OLineO();
-            oLineo.setCoords(this.x1, this.y1, this.x2, this. y2);
+            oLineo.setCoords(this.x1, this.y1, this.x2, this.y2);
             oLineo.show(canvas);
             Editor.addShape(oLineo);
         });
