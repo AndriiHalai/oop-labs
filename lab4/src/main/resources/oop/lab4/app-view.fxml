@@ -97,10 +97,20 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" text="Cube" toggleGroup="$tools">
+            <ToggleButton mnemonicParsing="false" onAction="#drawCube" prefHeight="37.0" prefWidth="59.0" toggleGroup="$tools">
                <tooltip>
-                  <Tooltip text="Empty Tooltip" />
+                  <Tooltip text="Куб">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Tooltip>
                </tooltip>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-11-14_22-22-58.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </ToggleButton>
       </items>
     </ToolBar>

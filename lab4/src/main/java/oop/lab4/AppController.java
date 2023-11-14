@@ -3,6 +3,7 @@ package oop.lab4;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import oop.lab4.Shapes.*;
 
 public class AppController {
@@ -30,14 +31,14 @@ public class AppController {
     }
 
     public void drawRect() {
-        Editor.draw(new RectShape(), canvas);
+        Editor.draw(new RectShape(Color.ORANGE), canvas);
     }
 
     public void drawEllipse() {
         Editor.draw(new EllipseShape(), canvas);
     }
 
-    public void drawOLineO() {
-        Editor.draw(new OLineO(), canvas);
-    }
+    public void drawOLineO() { Editor.draw(new OLineO(), canvas); }
+
+    public void drawCube() {Editor.draw(new Cube(), canvas);}
 }
