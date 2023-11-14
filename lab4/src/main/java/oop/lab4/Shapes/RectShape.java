@@ -1,14 +1,25 @@
 package oop.lab4.Shapes;
 
+import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import oop.lab4.Editor;
 
 public class RectShape extends Shape{
     private double x, y, x1, y1, x2, y2, width, height;
+    public Paint color = null;
 
-    private void setCoords(double x, double y, double width, double height) {
+    public RectShape() {
+
+    }
+
+    public RectShape(Paint color) {
+        this.color = color;
+    }
+
+    public void setCoords(double x, double y, double width, double height) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -17,9 +28,10 @@ public class RectShape extends Shape{
 
     public void show(Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(Color.ORANGE);
-        gc.setLineDashes(0);
-        gc.fillRect(this.x, this.y, width , height);
+        if (color != null) {
+            gc.setFill(color);
+            gc.fillRect(this.x, this.y, width , height);
+        }
         gc.strokeRect(this.x, this.y, width, height);
     }
 
@@ -72,7 +84,7 @@ public class RectShape extends Shape{
         canvas.setOnMouseReleased(mouseEvent -> {
             Editor.clearCanvas(canvas);
             Editor.redrawCanvas(canvas);
-            RectShape rect = new RectShape();
+            RectShape rect = new RectShape(this.color);
             rect.setCoords(this.x, this.y, this.width, this.height);
             rect.show(canvas);
             Editor.addShape(rect);
