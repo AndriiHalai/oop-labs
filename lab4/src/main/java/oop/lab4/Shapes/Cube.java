@@ -33,17 +33,17 @@ public class Cube extends Shape {
         this.width = Math.abs(mouseReleasedX - mousePressedX) * (1 - wConst);
         this.height = Math.abs(mouseReleasedY - mousePressedY) * (1 - hConst);
 
-        if (mousePressedX < mouseReleasedX && mousePressedY < mouseReleasedY) {
+        if (mousePressedX <= mouseReleasedX && mousePressedY <= mouseReleasedY) {
             this.x1 = mousePressedX;
             this.y1 = mousePressedY;
             this.x4 = mouseReleasedX;
             this.y4 = mouseReleasedY;
-        } else if (mouseReleasedX < mousePressedX && mousePressedY < mouseReleasedY) {
+        } else if (mouseReleasedX <= mousePressedX && mousePressedY <= mouseReleasedY) {
             this.x1 = mousePressedX - width;
             this.y1 = mousePressedY;
             this.x4 = mouseReleasedX + width;
             this.y4 = mouseReleasedY;
-        } else if (mousePressedX < mouseReleasedX && mouseReleasedY < mousePressedY) {
+        } else if (mousePressedX <= mouseReleasedX && mouseReleasedY <= mousePressedY) {
             this.x1 = mouseReleasedX - width;
             this.y1 = mouseReleasedY;
             this.x4 = mousePressedX + width;
