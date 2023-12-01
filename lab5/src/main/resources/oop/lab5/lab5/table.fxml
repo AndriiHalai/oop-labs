@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1">
+   <children>
+      <TableView>
+        <columns>
+          <TableColumn prefWidth="300.0" text="Назва" />
+          <TableColumn prefWidth="100.0" text="x1" />
+            <TableColumn prefWidth="100.0" text="y1" />
+            <TableColumn prefWidth="100.0" text="x2" />
+            <TableColumn prefWidth="100.0" text="y2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
