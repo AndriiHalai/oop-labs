@@ -11,6 +11,16 @@ public class Editor {
         SHAPE_ARRAY_LIST.add(shape);
     }
 
+    private Editor() {}
+
+    private static class EditorHolder {
+        static final Editor INSTANCE = new Editor();
+    }
+
+    public static Editor getInstance() {
+        return EditorHolder.INSTANCE;
+    }
+
     public static void redrawCanvas(Canvas canvas) {
         for (Shape shape : SHAPE_ARRAY_LIST) {
             shape.show(canvas);
