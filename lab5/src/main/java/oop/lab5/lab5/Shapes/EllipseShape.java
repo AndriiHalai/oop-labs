@@ -1,4 +1,4 @@
-package oop.lab4.Shapes;
+package oop.lab5.lab5.Shapes;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

@@ -1,11 +1,11 @@
-package oop.lab4.Shapes;
+package oop.lab5.lab5.Shapes;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 import oop.lab5.lab5.Editor;
 
-public class RectShape extends Shape{
+public class RectShape extends Shape {
     private double x, y, x1, y1, x2, y2, width, height;
     public Paint color = null;
 

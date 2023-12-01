@@ -1,8 +1,6 @@
-package oop.lab4.Shapes;
+package oop.lab5.lab5.Shapes;
 
 import javafx.scene.canvas.Canvas;
-
-import java.util.ArrayList;
 
 public abstract class Shape {
     public abstract void show(Canvas canvas);

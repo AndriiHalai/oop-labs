@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import oop.lab4.Shapes.*;
+import oop.lab5.lab5.Shapes.*;
 
 public class AppController {
     @FXML

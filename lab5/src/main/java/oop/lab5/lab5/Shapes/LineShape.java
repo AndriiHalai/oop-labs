@@ -1,11 +1,11 @@
-package oop.lab4.Shapes;
+package oop.lab5.lab5.Shapes;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import oop.lab5.lab5.Editor;
 
-public class LineShape extends Shape{
+public class LineShape extends Shape {
     private double x1;
     private double y1;
     private double x2;

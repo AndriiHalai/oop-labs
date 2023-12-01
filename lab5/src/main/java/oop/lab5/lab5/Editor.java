@@ -1,7 +1,7 @@
 package oop.lab5.lab5;
 
 import javafx.scene.canvas.Canvas;
-import oop.lab4.Shapes.Shape;
+import oop.lab5.lab5.Shapes.Shape;
 
 import java.util.ArrayList;
 
