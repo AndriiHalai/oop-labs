@@ -4,6 +4,7 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.ToolBar?>
@@ -16,7 +17,10 @@
   <children>
     <MenuBar fx:id="menuBar" VBox.vgrow="ALWAYS">
       <menus>
-        <Menu mnemonicParsing="false" text="Файл" />
+        <Menu mnemonicParsing="false" text="Файл">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showTable" text="Таблиця" />
+               </items></Menu>
         <Menu mnemonicParsing="false" text="Довідка" />
       </menus>
     </MenuBar>

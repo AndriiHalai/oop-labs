@@ -1,10 +1,16 @@
 package oop.lab5.lab5;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import oop.lab5.lab5.Shapes.*;
+
+import java.io.IOException;
 
 public class AppController {
     @FXML
@@ -41,4 +47,9 @@ public class AppController {
     public void drawOLineO() { Editor.draw(new OLineO(), canvas); }
 
     public void drawCube() {Editor.draw(new Cube(), canvas);}
+
+    public void showTable() throws IOException {
+        Table table = Table.getInstance();
+        table.show();
+    }
 }
