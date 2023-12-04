@@ -9,6 +9,7 @@ public class Editor {
     public static final ArrayList<Shape> SHAPE_ARRAY_LIST = new ArrayList<>();
     public static void addShape(Shape shape) {
         SHAPE_ARRAY_LIST.add(shape);
+        addToTable(shape);
     }
 
     private Editor() {}
@@ -35,5 +36,10 @@ public class Editor {
         shape.onMousePressed(canvas);
         shape.onMouseDragged(canvas);
         shape.onMouseReleased(canvas);
+    }
+
+    public static void addToTable(Shape shape) {
+        TableController controller = TableController.getController();
+        controller.add(shape);
     }
 }

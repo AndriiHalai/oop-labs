@@ -1,16 +1,13 @@
 package oop.lab5.lab5;
 
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import oop.lab5.lab5.Shapes.Shape;
 
 import java.io.IOException;
 
 public class Table {
-    public ObservableList<Shape> shapes;
 
     public Stage stage;
 

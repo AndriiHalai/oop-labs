@@ -1,18 +1,17 @@
 package oop.lab5.lab5;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import oop.lab5.lab5.Shapes.*;
 
 import java.io.IOException;
 
 public class AppController {
+
+    private Table table;
+
     @FXML
     Canvas canvas;
 
@@ -20,12 +19,13 @@ public class AppController {
     VBox root;
 
     @FXML
-    private void initialize() {
+    private void initialize() throws IOException {
         canvas.widthProperty().bind(root.widthProperty());
         canvas.heightProperty().bind(root.heightProperty());
         canvas.widthProperty().addListener(observable -> Editor.redrawCanvas(canvas));
         canvas.heightProperty().addListener(observable -> Editor.redrawCanvas(canvas));
         drawPoint();
+        table = new Table();
     }
 
     public void drawPoint() {
@@ -49,7 +49,6 @@ public class AppController {
     public void drawCube() {Editor.draw(new Cube(), canvas);}
 
     public void showTable() throws IOException {
-        Table table = Table.getInstance();
         table.show();
     }
 }
