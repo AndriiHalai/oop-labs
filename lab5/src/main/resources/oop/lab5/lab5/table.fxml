@@ -8,11 +8,11 @@
    <children>
       <TableView fx:id="tableView" layoutX="-1.0">
         <columns>
-          <TableColumn prefWidth="300.0" text="Назва" />
-          <TableColumn prefWidth="100.0" text="x1" />
-            <TableColumn prefWidth="100.0" text="y1" />
-            <TableColumn prefWidth="100.0" text="x2" />
-            <TableColumn prefWidth="100.0" text="y2" />
+          <TableColumn fx:id="nameCol" prefWidth="300.0" text="Назва" />
+          <TableColumn prefWidth="100.0" text="x1" fx:id="x1Col" />
+            <TableColumn fx:id="y1Col" prefWidth="100.0" text="y1" />
+            <TableColumn prefWidth="100.0" text="x2" fx:id="x2Col" />
+            <TableColumn fx:id="y2Col" prefWidth="100.0" text="y2" />
         </columns>
       </TableView>
    </children>
