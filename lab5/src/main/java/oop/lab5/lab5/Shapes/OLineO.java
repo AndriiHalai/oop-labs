@@ -5,7 +5,9 @@ import javafx.scene.canvas.GraphicsContext;
 import oop.lab5.lab5.Editor;
 
 public class OLineO extends Shape {
-    private double x1, y1, x2, y2;
+    private final String name = "OLineO";
+
+    public double x1, y1, x2, y2;
     private final double pointSize = 20;
     private final LineShape line = new LineShape();
     private final EllipseShape ellipse = new EllipseShape();
@@ -64,5 +66,25 @@ public class OLineO extends Shape {
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x1;
+    }
+
+    public double getY1() {
+        return this.y1;
+    }
+
+    public double getX2() {
+        return this.x2;
+    }
+
+    public double getY2() {
+        return this.y2;
     }
 }

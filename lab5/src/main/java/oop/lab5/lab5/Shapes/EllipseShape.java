@@ -6,6 +6,8 @@ import javafx.scene.paint.Color;
 import oop.lab5.lab5.Editor;
 
 public class EllipseShape extends Shape {
+    private final String name = "Ellipse";
+
     private double x, y, x1, y1, x2, y2, width, height;
 
     @Override
@@ -78,6 +80,26 @@ public class EllipseShape extends Shape {
         this.y1 = y1;
         this.width = width;
         this.height = height;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x1;
+    }
+
+    public double getY1() {
+        return this.y1;
+    }
+
+    public double getX2() {
+        return this.x2;
+    }
+
+    public double getY2() {
+        return this.y2;
     }
 }
 

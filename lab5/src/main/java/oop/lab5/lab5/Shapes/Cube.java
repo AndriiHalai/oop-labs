@@ -5,12 +5,14 @@ import javafx.scene.canvas.GraphicsContext;
 import oop.lab5.lab5.Editor;
 
 public class Cube extends Shape {
+    private final String name = "Cube";
+
     private double x1, y1, x2, y2;
     private double x3, y3, x4, y4;
     private double width, height;
 
-    private RectShape rect = new RectShape();
-    private LineShape line = new LineShape();
+    private final RectShape rect = new RectShape();
+    private final LineShape line = new LineShape();
     @Override
     public void show(Canvas canvas) {
         rect.setCoords(x1, y1, width ,height);
@@ -98,5 +100,25 @@ public class Cube extends Shape {
             cube.show(canvas);
             Editor.addShape(cube);
         });
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x1;
+    }
+
+    public double getY1() {
+        return this.y1;
+    }
+
+    public double getX2() {
+        return this.x2;
+    }
+
+    public double getY2() {
+        return this.y2;
     }
 }

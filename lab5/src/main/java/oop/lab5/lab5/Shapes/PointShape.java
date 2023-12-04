@@ -6,7 +6,10 @@ import javafx.scene.paint.Color;
 import oop.lab5.lab5.Editor;
 
 public class PointShape extends Shape {
+    private final String name = "Point";
+
     private double x;
+
     private double y;
 
     private void setCoords(double x, double y) {
@@ -41,5 +44,25 @@ public class PointShape extends Shape {
     @Override
     public void onMouseReleased(Canvas canvas) {
         canvas.setOnMouseReleased(null);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x;
+    }
+
+    public double getY1() {
+        return this.y;
+    }
+
+    public double getX2() {
+        return this.x;
+    }
+
+    public double getY2() {
+        return this.y;
     }
 }

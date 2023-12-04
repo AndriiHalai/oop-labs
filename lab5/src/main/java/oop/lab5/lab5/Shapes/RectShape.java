@@ -6,7 +6,9 @@ import javafx.scene.paint.Paint;
 import oop.lab5.lab5.Editor;
 
 public class RectShape extends Shape {
-    private double x, y, x1, y1, x2, y2, width, height;
+    private final String name = "Rectangle";
+
+    public double x, y, x1, y1, x2, y2, width, height;
     public Paint color = null;
 
     public RectShape() {
@@ -87,5 +89,25 @@ public class RectShape extends Shape {
             rect.show(canvas);
             Editor.addShape(rect);
         });
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x1;
+    }
+
+    public double getY1() {
+        return this.y1;
+    }
+
+    public double getX2() {
+        return this.x2;
+    }
+
+    public double getY2() {
+        return this.y2;
     }
 }

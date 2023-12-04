@@ -6,7 +6,9 @@ import javafx.scene.paint.Color;
 import oop.lab5.lab5.Editor;
 
 public class LineShape extends Shape {
-    private double x1;
+    private final String name = "Line";
+
+    public double x1;
     private double y1;
     private double x2;
     private double y2;
@@ -59,5 +61,25 @@ public class LineShape extends Shape {
             line.show(canvas);
             Editor.addShape(line);
         });
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getX1() {
+        return this.x1;
+    }
+
+    public double getY1() {
+        return this.y1;
+    }
+
+    public double getX2() {
+        return this.x2;
+    }
+
+    public double getY2() {
+        return this.y2;
     }
 }
