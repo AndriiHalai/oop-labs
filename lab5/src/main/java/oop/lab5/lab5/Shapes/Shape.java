@@ -9,6 +9,8 @@ public abstract class Shape {
     public abstract void onMouseDragged(Canvas canvas);
     public abstract void onMouseReleased(Canvas canvas);
 
+    public abstract Shape getInstance();
+
     public abstract String getName();
 
     public abstract double getX1();

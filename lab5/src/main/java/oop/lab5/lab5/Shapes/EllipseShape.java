@@ -8,6 +8,8 @@ import oop.lab5.lab5.Editor;
 public class EllipseShape extends Shape {
     private final String name = "Ellipse";
 
+    private EllipseShape instance;
+
     private double x, y, x1, y1, x2, y2, width, height;
 
     @Override
@@ -72,6 +74,7 @@ public class EllipseShape extends Shape {
             ellipse.setCoords(this.x1, this.y1, this.width, this.height);
             ellipse.show(canvas);
             Editor.addShape(ellipse);
+            this.instance = ellipse;
         });
     }
 
@@ -80,6 +83,10 @@ public class EllipseShape extends Shape {
         this.y1 = y1;
         this.width = width;
         this.height = height;
+    }
+
+    public EllipseShape getInstance() {
+        return this.instance;
     }
 
     public String getName() {
@@ -95,11 +102,11 @@ public class EllipseShape extends Shape {
     }
 
     public double getX2() {
-        return this.x2;
+        return this.x1 + this.width;
     }
 
     public double getY2() {
-        return this.y2;
+        return this.y1 + this.height;
     }
 }
 

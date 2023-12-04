@@ -8,6 +8,8 @@ import oop.lab5.lab5.Editor;
 public class RectShape extends Shape {
     private final String name = "Rectangle";
 
+    private RectShape instance;
+
     public double x, y, x1, y1, x2, y2, width, height;
     public Paint color = null;
 
@@ -88,7 +90,12 @@ public class RectShape extends Shape {
             rect.setCoords(this.x, this.y, this.width, this.height);
             rect.show(canvas);
             Editor.addShape(rect);
+            this.instance = rect;
         });
+    }
+
+    public RectShape getInstance() {
+        return this.instance;
     }
 
     public String getName() {
@@ -96,18 +103,16 @@ public class RectShape extends Shape {
     }
 
     public double getX1() {
-        return this.x1;
+        return this.x;
     }
 
     public double getY1() {
-        return this.y1;
+        return this.y;
     }
 
     public double getX2() {
-        return this.x2;
+        return this.x + this.width;
     }
 
-    public double getY2() {
-        return this.y2;
-    }
+    public double getY2() { return this.y2 + this.height ; }
 }

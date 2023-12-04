@@ -7,6 +7,8 @@ import oop.lab5.lab5.Editor;
 public class OLineO extends Shape {
     private final String name = "OLineO";
 
+    private OLineO instance;
+
     public double x1, y1, x2, y2;
     private final double pointSize = 20;
     private final LineShape line = new LineShape();
@@ -58,6 +60,7 @@ public class OLineO extends Shape {
             oLineo.setCoords(this.x1, this.y1, this.x2, this.y2);
             oLineo.show(canvas);
             Editor.addShape(oLineo);
+            this.instance = oLineo;
         });
     }
 
@@ -66,6 +69,10 @@ public class OLineO extends Shape {
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+    }
+
+    public OLineO getInstance() {
+        return this.instance;
     }
 
     public String getName() {

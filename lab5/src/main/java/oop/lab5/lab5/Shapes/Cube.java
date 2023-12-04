@@ -7,6 +7,8 @@ import oop.lab5.lab5.Editor;
 public class Cube extends Shape {
     private final String name = "Cube";
 
+    private Cube instance;
+
     private double x1, y1, x2, y2;
     private double x3, y3, x4, y4;
     private double width, height;
@@ -99,7 +101,12 @@ public class Cube extends Shape {
             cube.setCoords(x1, y1, x4, y4);
             cube.show(canvas);
             Editor.addShape(cube);
+            this.instance = cube;
         });
+    }
+
+    public Cube getInstance() {
+        return this.instance;
     }
 
     public String getName() {

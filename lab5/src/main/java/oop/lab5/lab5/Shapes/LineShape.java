@@ -8,6 +8,8 @@ import oop.lab5.lab5.Editor;
 public class LineShape extends Shape {
     private final String name = "Line";
 
+    private LineShape instance;
+
     public double x1;
     private double y1;
     private double x2;
@@ -60,7 +62,12 @@ public class LineShape extends Shape {
             line.setCoords(this.x1, this.y1, this.x2, this.y2);
             line.show(canvas);
             Editor.addShape(line);
+            this.instance = line;
         });
+    }
+
+    public LineShape getInstance() {
+        return this.instance;
     }
 
     public String getName() {
