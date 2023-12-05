@@ -11,16 +11,23 @@ public class Table {
 
     public Stage stage;
 
+    private final TableController controller;
+
     public Table() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Table.class.getResource("table.fxml"));
         Parent root = fxmlLoader.load();
         this.stage = new Stage();
         stage.setTitle("Table");
         stage.setScene(new Scene(root));
+        controller = fxmlLoader.getController();
         TableController.setController(fxmlLoader.getController());
     }
 
     public void show() throws IOException {
         stage.show();
+    }
+
+    public TableController getController() {
+        return controller;
     }
 }

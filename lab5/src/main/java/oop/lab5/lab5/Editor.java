@@ -7,9 +7,11 @@ import java.util.ArrayList;
 
 public class Editor {
     public static final ArrayList<Shape> SHAPE_ARRAY_LIST = new ArrayList<>();
+
+    private static TableController tableController;
     public static void addShape(Shape shape) {
         SHAPE_ARRAY_LIST.add(shape);
-        addToTable(shape);
+        tableController.add(shape);
     }
 
     private Editor() {}
@@ -32,14 +34,10 @@ public class Editor {
         canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
 
-    public static void draw(Shape shape, Canvas canvas) {
+    public static void draw(Shape shape, Canvas canvas, TableController controller) {
         shape.onMousePressed(canvas);
         shape.onMouseDragged(canvas);
         shape.onMouseReleased(canvas);
-    }
-
-    public static void addToTable(Shape shape) {
-        TableController controller = TableController.getController();
-        controller.add(shape);
+        tableController = controller;
     }
 }
