@@ -31,24 +31,24 @@ public class AppController {
     }
 
     public void drawPoint() {
-        Editor.draw(new PointShape(), canvas, controller);
+        Editor.draw(new PointShape(), canvas);
     }
 
     public void drawLine() {
-        Editor.draw(new LineShape(), canvas, controller);
+        Editor.draw(new LineShape(), canvas);
     }
 
     public void drawRect() {
-        Editor.draw(new RectShape(Color.ORANGE), canvas, controller);
+        Editor.draw(new RectShape(Color.ORANGE), canvas);
     }
 
     public void drawEllipse() {
-        Editor.draw(new EllipseShape(), canvas, controller);
+        Editor.draw(new EllipseShape(), canvas);
     }
 
-    public void drawOLineO() { Editor.draw(new OLineO(), canvas, controller); }
+    public void drawOLineO() { Editor.draw(new OLineO(), canvas); }
 
-    public void drawCube() {Editor.draw(new Cube(), canvas, controller);}
+    public void drawCube() {Editor.draw(new Cube(), canvas);}
 
     public void showTable() throws IOException {
         table.show();
