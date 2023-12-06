@@ -3,25 +3,17 @@ package oop.lab5.lab5;
 import javafx.scene.canvas.Canvas;
 import oop.lab5.lab5.Shapes.Shape;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Editor {
 
-    public static List<Observer> observers = new ArrayList<>();
-
     public static final ArrayList<Shape> SHAPE_ARRAY_LIST = new ArrayList<>();
 
-    private static TableController tableController;
     public static void addShape(Shape shape) {
         SHAPE_ARRAY_LIST.add(shape);
-//        tableController.add(shape);
-        try {
-            notifyObservers(shape);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
+        Table table = Table.getInstance();
+        table.addToTable(shape);
     }
 
     private Editor() {}
@@ -48,19 +40,5 @@ public class Editor {
         shape.onMousePressed(canvas);
         shape.onMouseDragged(canvas);
         shape.onMouseReleased(canvas);
-    }
-
-    public static void addObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    public static void removeObserver(Observer observer) {
-        observers.remove(observer);
-    }
-
-    public static void notifyObservers(Shape shape) throws IOException {
-        for (Observer observer : observers) {
-            observer.update(shape);
-        }
     }
 }

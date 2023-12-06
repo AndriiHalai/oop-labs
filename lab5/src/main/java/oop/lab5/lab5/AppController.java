@@ -26,7 +26,6 @@ public class AppController {
         canvas.heightProperty().addListener(observable -> Editor.redrawCanvas(canvas));
         table = Table.getInstance();
         drawPoint();
-        Editor.addObserver(new TableObserver());
     }
 
     public void drawPoint() {
