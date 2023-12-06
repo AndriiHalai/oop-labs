@@ -11,7 +11,6 @@ import java.io.IOException;
 public class AppController {
 
     private Table table;
-    private TableController controller;
 
     @FXML
     Canvas canvas;
@@ -20,35 +19,35 @@ public class AppController {
     VBox root;
 
     @FXML
-    private void initialize() throws IOException {
+    private void initialize() {
         canvas.widthProperty().bind(root.widthProperty());
         canvas.heightProperty().bind(root.heightProperty());
         canvas.widthProperty().addListener(observable -> Editor.redrawCanvas(canvas));
         canvas.heightProperty().addListener(observable -> Editor.redrawCanvas(canvas));
-        table = new Table();
-        controller = table.getController();
+        table = Table.getInstance();
         drawPoint();
+        Editor.addObserver(new TableObserver());
     }
 
     public void drawPoint() {
-        Editor.draw(new PointShape(), canvas, controller);
+        Editor.draw(new PointShape(), canvas);
     }
 
     public void drawLine() {
-        Editor.draw(new LineShape(), canvas, controller);
+        Editor.draw(new LineShape(), canvas);
     }
 
     public void drawRect() {
-        Editor.draw(new RectShape(Color.ORANGE), canvas, controller);
+        Editor.draw(new RectShape(Color.ORANGE), canvas);
     }
 
     public void drawEllipse() {
-        Editor.draw(new EllipseShape(), canvas, controller);
+        Editor.draw(new EllipseShape(), canvas);
     }
 
-    public void drawOLineO() { Editor.draw(new OLineO(), canvas, controller); }
+    public void drawOLineO() { Editor.draw(new OLineO(), canvas); }
 
-    public void drawCube() {Editor.draw(new Cube(), canvas, controller);}
+    public void drawCube() {Editor.draw(new Cube(), canvas);}
 
     public void showTable() throws IOException {
         table.show();
