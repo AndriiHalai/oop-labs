@@ -50,11 +50,9 @@ public class TableController {
     }
 
     public void saveToFile() {
-        System.out.println(SHAPES_LIST);
         try {
            FileWriter fw = new FileWriter("D:/homework/2nd-year/oop/oop-labs/lab5/src/main/java/oop/lab5/lab5/shapes.txt");
            for (Shape shape : SHAPES_LIST) {
-               System.out.println(1);
                fw.write(shape.getName() + "|"
                        + shape.getX1() + "|"
                        + shape.getY1() + "|"
