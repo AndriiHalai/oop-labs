@@ -6,9 +6,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import oop.lab5.lab5.Shapes.Shape;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TableController {
 
     private static TableController controller;
+
+    private final List<Shape> SHAPES_LIST = new ArrayList<>();
 
     @FXML
     public TableView<Shape> tableView;
@@ -35,9 +40,11 @@ public class TableController {
         y1Col.setCellValueFactory(new PropertyValueFactory<>("y1"));
         x2Col.setCellValueFactory(new PropertyValueFactory<>("x2"));
         y2Col.setCellValueFactory(new PropertyValueFactory<>("y2"));
+        tableView.getItems().addAll(SHAPES_LIST);
     }
 
     public void add(Shape shape) {
+        SHAPES_LIST.add(shape);
         tableView.getItems().add(shape);
     }
 

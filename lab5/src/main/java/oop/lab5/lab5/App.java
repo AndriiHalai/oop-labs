@@ -15,6 +15,11 @@ public class App extends Application {
         stage.setTitle("lab5");
         stage.setScene(scene);
         stage.show();
+
+        stage.setOnHidden(event -> {
+            Table table = Table.getInstance();
+            table.close();
+        });
     }
 
     public static void main(String[] args) {

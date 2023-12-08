@@ -44,6 +44,10 @@ public class Table {
         stage.show();
     }
 
+    public void close() {
+        stage.close();
+    }
+
     public void addToTable(Shape shape) {
         controller.add(shape);
     }
