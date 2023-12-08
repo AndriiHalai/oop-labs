@@ -6,6 +6,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import oop.lab5.lab5.Shapes.Shape;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,26 @@ public class TableController {
     public void add(Shape shape) {
         SHAPES_LIST.add(shape);
         tableView.getItems().add(shape);
+    }
+
+    public void saveToFile() {
+        System.out.println(SHAPES_LIST);
+        try {
+           FileWriter fw = new FileWriter("D:/homework/2nd-year/oop/oop-labs/lab5/src/main/java/oop/lab5/lab5/shapes.txt");
+           for (Shape shape : SHAPES_LIST) {
+               System.out.println(1);
+               fw.write(shape.getName() + "|"
+                       + shape.getX1() + "|"
+                       + shape.getY1() + "|"
+                       + shape.getX2() + "|"
+                       + shape.getY2());
+               fw.write("\n");
+           }
+           fw.close();
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
     }
 
     public static void setController(TableController val) {

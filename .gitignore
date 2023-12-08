@@ -210,4 +210,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+lab5/src/main/java/oop/lab5/lab5/shapes.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,windows
