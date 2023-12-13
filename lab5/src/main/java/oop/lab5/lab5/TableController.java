@@ -52,12 +52,13 @@ public class TableController {
     public void saveToFile() {
         try {
            FileWriter fw = new FileWriter("D:/homework/2nd-year/oop/oop-labs/lab5/src/main/java/oop/lab5/lab5/shapes.txt");
+           fw.write("Shape_Name \t" + "x1\t" + "x2\t" + "x3\t" + "x4\t\n");
            for (Shape shape : SHAPES_LIST) {
-               fw.write(shape.getName() + "|"
-                       + shape.getX1() + "|"
-                       + shape.getY1() + "|"
-                       + shape.getX2() + "|"
-                       + shape.getY2());
+               fw.write(shape.getName() + "\t"
+                       + Math.round(shape.getX1()) + "\t"
+                       + Math.round(shape.getY1()) + "\t"
+                       + Math.round(shape.getX2()) + "\t"
+                       + Math.round(shape.getY2()) );
                fw.write("\n");
            }
            fw.close();
