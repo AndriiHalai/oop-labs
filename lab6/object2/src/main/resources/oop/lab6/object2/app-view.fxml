@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.lab6.object2.AppController">
    <children>
-      <TableView prefHeight="400.0" prefWidth="200.0">
+      <TableView fx:id="tableView" prefHeight="400.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="196.800048828125" text="Вектор" />
+          <TableColumn fx:id="valueCol" prefWidth="196.800048828125" text="Value" />
         </columns>
       </TableView>
+      <Button fx:id="generateButton" layoutX="274.0" layoutY="187.0" mnemonicParsing="false" text="Generate" />
    </children>
 </AnchorPane>
