@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -27,10 +28,10 @@ public class Object1Controller {
     public void initialize() {
         startButton.setOnAction(actionEvent -> {
             if (!isActive) {
-                String path = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object2\\out\\artifacts\\object2_jar\\object2.jar";
+                String path = "./out/artifacts/object1_jar/object2.jar";
                 String[] command = {"java", "-jar", path};
                 ProcessBuilder processBuilder = new ProcessBuilder(command);
-                String path2 = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object3\\out\\artifacts\\object3_jar\\object3.jar";
+                String path2 = "./out/artifacts/object1_jar/object3.jar";
                 String[] command2 = {"java", "-jar", path2};
                 ProcessBuilder processBuilder2 = new ProcessBuilder(command2);
                 try {
