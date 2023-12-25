@@ -43,6 +43,18 @@ public class Object1Controller {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            if (!isActive) {
+                String path2 = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object3\\out\\artifacts\\object3_jar\\object3.jar";
+                String[] command2 = {"java", "-jar", path2};
+                ProcessBuilder processBuilder2 = new ProcessBuilder(command2);
+                try {
+                    Process p2 = processBuilder2.start();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                isActive = true;
+            }
         });
     }
 }

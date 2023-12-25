@@ -1,12 +1,11 @@
 package oop.lab6.object2;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +21,8 @@ public class AppController {
             return this.value;
         }
     }
+
+    public static List<DoubleData> doubleVector;
     public static int n;
 
     public static double min;
@@ -46,14 +47,17 @@ public class AppController {
         }
         tableView.getItems().addAll(vector);
     }
-    public static void generateVector() {
+    public static void generateVector() throws IOException, InterruptedException {
         List<DoubleData> vector = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             double num = getRandomNumber(min, max);
             vector.add(new DoubleData(num));
         }
+        doubleVector = vector;
         AppController controller = AppController.getAppController();
         controller.addVectorToTable(vector);
+//        Thread.sleep(1000);
+        Client.send(vector);
     }
 
     public static double getRandomNumber(double min, double max) {
