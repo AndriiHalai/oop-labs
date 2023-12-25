@@ -2,6 +2,7 @@ package oop.lab6.object2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AppController {
-
+    private static AppController appController;
     public static class DoubleData {
         private final double value;
         public DoubleData(double num) {
@@ -21,12 +22,12 @@ public class AppController {
             return this.value;
         }
     }
+    public static int n;
 
-    public static double min = -1;
+    public static double min;
 
-    public static double max = 10;
+    public static double max;
 
-    public static int n = 10;
 
     @FXML
     private TableView<DoubleData> tableView;
@@ -35,31 +36,36 @@ public class AppController {
     private TableColumn<DoubleData, Double> valueCol;
 
     @FXML
-    private Button generateButton;
-
-    @FXML
     public void initialize() {
-        generateButton.setOnAction(actionEvent -> {
-            valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
-            List<DoubleData> vector = generateVector(min, max, n);
-            addVectorToTable(vector);
-        });
+        valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
     }
 
     public void addVectorToTable(List<DoubleData> vector) {
+        if (tableView.getItems() != null) {
+            tableView.getItems().clear();
+        }
         tableView.getItems().addAll(vector);
     }
-    public List<DoubleData> generateVector(double min, double max, int n) {
+    public static void generateVector() {
         List<DoubleData> vector = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             double num = getRandomNumber(min, max);
             vector.add(new DoubleData(num));
         }
-        return vector;
+        AppController controller = AppController.getAppController();
+        controller.addVectorToTable(vector);
     }
 
-    public double getRandomNumber(double min, double max) {
+    public static double getRandomNumber(double min, double max) {
         double num = Math.random() * (max - min) + min;
         return Math.floor(num * 100) / 100;
+    }
+
+    public static void setAppController(AppController appController) {
+        AppController.appController = appController;
+    }
+
+    public static AppController getAppController() {
+        return AppController.appController;
     }
 }

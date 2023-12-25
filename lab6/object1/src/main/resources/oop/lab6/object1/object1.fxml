@@ -38,9 +38,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nField" GridPane.columnIndex="1" />
+            <TextField fx:id="minField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="maxField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="startButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Start" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
