@@ -30,8 +30,12 @@ public class Object1Controller {
                 String path = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object2\\out\\artifacts\\object2_jar\\object2.jar";
                 String[] command = {"java", "-jar", path};
                 ProcessBuilder processBuilder = new ProcessBuilder(command);
+                String path2 = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object3\\out\\artifacts\\object3_jar\\object3.jar";
+                String[] command2 = {"java", "-jar", path2};
+                ProcessBuilder processBuilder2 = new ProcessBuilder(command2);
                 try {
                     Process p = processBuilder.start();
+                    Process p2 = processBuilder2.start();
                     Thread.sleep(1000);
                 } catch (IOException | InterruptedException e) {
                     throw new RuntimeException(e);
@@ -42,18 +46,6 @@ public class Object1Controller {
                 Client.send(nField.getText(), minField.getText(), maxField.getText());
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            }
-
-            if (!isActive) {
-                String path2 = "D:\\homework\\2nd-year\\oop\\oop-labs\\lab6\\object3\\out\\artifacts\\object3_jar\\object3.jar";
-                String[] command2 = {"java", "-jar", path2};
-                ProcessBuilder processBuilder2 = new ProcessBuilder(command2);
-                try {
-                    Process p2 = processBuilder2.start();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                isActive = true;
             }
         });
     }

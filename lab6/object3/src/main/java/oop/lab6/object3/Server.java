@@ -3,7 +3,6 @@ package oop.lab6.object3;
 import javafx.application.Platform;
 import javafx.scene.chart.XYChart;
 
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -19,9 +18,7 @@ public class Server {
                     Socket socket = serverSocket.accept();
                     XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
-                    try (InputStreamReader inputStream = new InputStreamReader(socket.getInputStream());
-                         BufferedReader bufferedReader = new BufferedReader(inputStream)
-                    ) {
+                    try (InputStreamReader inputStream = new InputStreamReader(socket.getInputStream())) {
                         Scanner scanner = new Scanner(inputStream);
                         int i = 0;
                         while (scanner.hasNext()) {

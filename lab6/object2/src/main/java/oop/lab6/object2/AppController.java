@@ -47,7 +47,7 @@ public class AppController {
         }
         tableView.getItems().addAll(vector);
     }
-    public static void generateVector() throws IOException, InterruptedException {
+    public static void generateVector() throws IOException {
         List<DoubleData> vector = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             double num = getRandomNumber(min, max);
@@ -56,7 +56,6 @@ public class AppController {
         doubleVector = vector;
         AppController controller = AppController.getAppController();
         controller.addVectorToTable(vector);
-//        Thread.sleep(1000);
         Client.send(vector);
     }
 

@@ -1,39 +1,29 @@
 package oop.lab6.object2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
-
-    public static String receivedData;
     public static void start() {
         new Thread(() -> {
             try (ServerSocket serverSocket = new ServerSocket(9092)){
                 while (true) {
                     Socket socket = serverSocket.accept();
 
-                    try (InputStreamReader inputStream = new InputStreamReader(socket.getInputStream());
-                         BufferedReader bufferedReader = new BufferedReader(inputStream)
-                    ) {
+                    try (InputStreamReader inputStream = new InputStreamReader(socket.getInputStream())) {
                         Scanner scanner = new Scanner(inputStream);
-                        int i = 0;
-                        while (scanner.hasNext()) {
-                            switch (i) {
-                                case (0): AppController.n = Integer.parseInt(scanner.nextLine());
-                                case (1): AppController.min = Double.parseDouble(scanner.nextLine());
-                                case (2): AppController.max = Double.parseDouble(scanner.nextLine());
-                            }
-                            i++;
+                        String[] lines = new String[3];
+
+                        for (int i = 0; i < 3 && scanner.hasNext(); i++) {
+                            lines[i] = scanner.nextLine();
                         }
-//                        String data = bufferedReader.readLine(); // Object?
-//                        receivedData = data;
-//                        System.out.println(data);
-//                        inputStream.close();
+
+                        AppController.n = Integer.parseInt(lines[0]);
+                        AppController.min = Double.parseDouble(lines[1]);
+                        AppController.max = Double.parseDouble(lines[2]);
                     }
                     AppController.generateVector();
                     socket.close();
